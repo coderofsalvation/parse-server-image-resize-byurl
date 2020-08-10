@@ -1,12 +1,12 @@
 {
   "name": "parse-server-image-resize-byurl",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "flexible way of resizing images using url-arguments",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository":"https://github.com/coderofsalvation/parse-server-image-resize-byurl",
+  "repository": "https://github.com/coderofsalvation/parse-server-image-resize-byurl",
   "author": "",
   "license": "ISC",
   "dependencies": {

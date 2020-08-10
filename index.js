@@ -36,7 +36,9 @@ module.exports = (path) => function(req, res, next) {
     // let static middleware serve image if already resized
     if( fs.existsSync(fileResized) ){
         req.url = urlResized
-        return next()
+		res.redirect(304, urlResized )
+		res.end()
+        return
     } //return serveImage(fileResized,res)
     // lets resize it
     var roundMeasure = 32 // we want to cache images like foo.100.png, foo-200.png etc
