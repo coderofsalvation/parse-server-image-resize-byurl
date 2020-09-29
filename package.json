@@ -1,6 +1,6 @@
 {
   "name": "parse-server-image-resize-byurl",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "flexible way of resizing images using url-arguments",
   "main": "index.js",
   "scripts": {

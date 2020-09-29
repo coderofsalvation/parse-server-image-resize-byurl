@@ -33,20 +33,20 @@ module.exports = (path) => function(req, res, next) {
     var file           = process.cwd()+`/${path}/${fileBase}`
     var fileResized    = file+`.${req.query.w}.png` 
     var urlResized     = req.url.replace(fileBase,fileBase+`.${req.query.w}.png`)
+	                            .replace(/\?.*/, '')
     // let static middleware serve image if already resized
     if( fs.existsSync(fileResized) ){
         req.url = urlResized
-		res.redirect(304, urlResized )
+		res.redirect(308, urlResized )
 		res.end()
         return
-    } //return serveImage(fileResized,res)
+    }//return serveImage(fileResized,res)
     // lets resize it
     var roundMeasure = 32 // we want to cache images like foo.100.png, foo-200.png etc
     width = roundMeasure * Math.ceil(req.query.w / roundMeasure);
     if( width < roundMeasure ) width = roundMeasure
     resize.read( file, function(err,handle){
         if( err ) {
-            console.error(err)
             return res.end(err.toString())
         }
         handle.resize(width, resize.AUTO ).quality(100)
