@@ -11,6 +11,6 @@
   "license": "ISC",
   "dependencies": {
     "filendir": "^1.0.2",
-    "jimp": "^0.8.5"
+    "jimp": "^0.22.7"
   }
 }
